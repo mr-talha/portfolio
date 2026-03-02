@@ -217,4 +217,46 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Contact form AJAX submit (GitHub Pages friendly)
+   */
+  const contactForm = document.querySelector('#contact-form');
+  if (contactForm) {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const statusEl = contactForm.querySelector('.form-status');
+
+    contactForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      if (!submitBtn || !statusEl) return;
+
+      statusEl.className = 'form-status mt-3 alert alert-info';
+      statusEl.textContent = 'Sending message...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        statusEl.className = 'form-status mt-3 alert alert-success';
+        statusEl.textContent = 'Message sent successfully.';
+        contactForm.reset();
+      } catch (error) {
+        statusEl.className = 'form-status mt-3 alert alert-danger';
+        statusEl.textContent = 'Failed to send message. Please try again.';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
 })();
