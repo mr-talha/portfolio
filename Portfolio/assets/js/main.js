@@ -224,6 +224,7 @@
   if (contactForm) {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const statusEl = contactForm.querySelector('.form-status');
+    const endpoint = contactForm.getAttribute('data-endpoint') || contactForm.action;
 
     contactForm.addEventListener('submit', async function(event) {
       event.preventDefault();
@@ -235,7 +236,7 @@
       submitBtn.disabled = true;
 
       try {
-        const response = await fetch(contactForm.action, {
+        const response = await fetch(endpoint, {
           method: 'POST',
           body: new FormData(contactForm),
           headers: {
