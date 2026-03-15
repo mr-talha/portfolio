@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="PMS hiring and interview workflow diagram">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="lane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .t{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#e5e7eb}
+      .muted{fill:#a1a1aa}
+      .box{fill:#0b1220; stroke:#27324a; stroke-width:2}
+      .chip{fill:#0f1a2f; stroke:#27324a; stroke-width:2}
+      .k{fill:#22c55e}
+      .b{fill:#60a5fa}
+      .y{fill:#fbbf24}
+      .p{fill:#a78bfa}
+      .line{stroke:#334155; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <path d="M0 0 H1600 V190 C1320 250 1120 260 850 190 C560 115 320 120 0 210 Z" fill="url(#lane)"/>
+
+  <g transform="translate(86,74)">
+    <text class="t" x="0" y="0" font-size="54" font-weight="900" dominant-baseline="hanging">PMS Hiring Workflow</text>
+    <text class="t muted" x="0" y="74" font-size="20" font-weight="700" dominant-baseline="hanging">Ticket-centric scheduling, artifacts, reminders, and feedback across interview rounds</text>
+  </g>
+
+  <!-- Pipeline -->
+  <g filter="url(#shadow2)" transform="translate(86,220)">
+    <rect class="box" x="0" y="0" rx="18" ry="18" width="1428" height="590"/>
+
+    <!-- Nodes -->
+    <g transform="translate(56,64)">
+      <!-- Candidate intake -->
+      <rect class="box" x="0" y="0" rx="16" ry="16" width="240" height="150"/>
+      <text class="t" x="18" y="30" font-size="18" font-weight="900">Intake</text>
+      <text class="t muted" x="18" y="60" font-size="13" font-weight="700">Create ticket</text>
+      <text class="t muted" x="18" y="82" font-size="13" font-weight="700">Parse structured title</text>
+      <g transform="translate(18,104)">
+        <rect class="chip" x="0" y="0" rx="10" ry="10" width="96" height="30"/>
+        <text class="t" x="12" y="21" font-size="12" font-weight="900">JSON-RPC</text>
+        <rect class="chip" x="104" y="0" rx="10" ry="10" width="78" height="30"/>
+        <text class="t" x="116" y="21" font-size="12" font-weight="900">Meta</text>
+      </g>
+      <circle class="k" cx="216" cy="28" r="7"/>
+
+      <!-- Screening -->
+      <rect class="box" x="316" y="0" rx="16" ry="16" width="240" height="150"/>
+      <text class="t" x="334" y="30" font-size="18" font-weight="900">Screening</text>
+      <text class="t muted" x="334" y="60" font-size="13" font-weight="700">Assign reviewer</text>
+      <text class="t muted" x="334" y="82" font-size="13" font-weight="700">Shortlist decision</text>
+      <g transform="translate(334,104)">
+        <rect class="chip" x="0" y="0" rx="10" ry="10" width="78" height="30"/>
+        <text class="t" x="12" y="21" font-size="12" font-weight="900">Rules</text>
+        <rect class="chip" x="86" y="0" rx="10" ry="10" width="84" height="30"/>
+        <text class="t" x="98" y="21" font-size="12" font-weight="900">Notify</text>
+      </g>
+      <circle class="b" cx="532" cy="28" r="7"/>
+
+      <!-- Schedule -->
+      <rect class="box" x="632" y="0" rx="16" ry="16" width="240" height="150"/>
+      <text class="t" x="650" y="30" font-size="18" font-weight="900">Schedule</text>
+      <text class="t muted" x="650" y="60" font-size="13" font-weight="700">TaskEvents per ticket</text>
+      <text class="t muted" x="650" y="82" font-size="13" font-weight="700">Timezone support</text>
+      <g transform="translate(650,104)">
+        <rect class="chip" x="0" y="0" rx="10" ry="10" width="88" height="30"/>
+        <text class="t" x="12" y="21" font-size="12" font-weight="900">Calendar</text>
+        <rect class="chip" x="96" y="0" rx="10" ry="10" width="88" height="30"/>
+        <text class="t" x="108" y="21" font-size="12" font-weight="900">Filters</text>
+      </g>
+      <circle class="y" cx="848" cy="28" r="7"/>
+
+      <!-- Artifacts -->
+      <rect class="box" x="948" y="0" rx="16" ry="16" width="240" height="150"/>
+      <text class="t" x="966" y="30" font-size="18" font-weight="900">Artifacts</text>
+      <text class="t muted" x="966" y="60" font-size="13" font-weight="700">OneDrive / Drive</text>
+      <text class="t muted" x="966" y="82" font-size="13" font-weight="700">FFmpeg processing</text>
+      <g transform="translate(966,104)">
+        <rect class="chip" x="0" y="0" rx="10" ry="10" width="96" height="30"/>
+        <text class="t" x="12" y="21" font-size="12" font-weight="900">Uploads</text>
+        <rect class="chip" x="104" y="0" rx="10" ry="10" width="96" height="30"/>
+        <text class="t" x="116" y="21" font-size="12" font-weight="900">Verify</text>
+      </g>
+      <circle class="p" cx="1164" cy="28" r="7"/>
+
+      <!-- Feedback -->
+      <rect class="box" x="1264" y="0" rx="16" ry="16" width="240" height="150"/>
+      <text class="t" x="1282" y="30" font-size="18" font-weight="900">Feedback</text>
+      <text class="t muted" x="1282" y="60" font-size="13" font-weight="700">Transcripts + summaries</text>
+      <text class="t muted" x="1282" y="82" font-size="13" font-weight="700">Final consolidated summary</text>
+      <g transform="translate(1282,104)">
+        <rect class="chip" x="0" y="0" rx="10" ry="10" width="86" height="30"/>
+        <text class="t" x="12" y="21" font-size="12" font-weight="900">Gemini</text>
+        <rect class="chip" x="94" y="0" rx="10" ry="10" width="86" height="30"/>
+        <text class="t" x="106" y="21" font-size="12" font-weight="900">Theme</text>
+      </g>
+      <circle class="k" cx="1480" cy="28" r="7"/>
+
+      <!-- Connectors -->
+      <path class="line" d="M240 75 H316"/>
+      <path class="line" d="M556 75 H632"/>
+      <path class="line" d="M872 75 H948"/>
+      <path class="line" d="M1188 75 H1264"/>
+    </g>
+
+    <!-- Notification rail -->
+    <g transform="translate(56,270)">
+      <rect class="box" x="0" y="0" rx="16" ry="16" width="1316" height="250" fill="#070b14" stroke="#1f2a44" stroke-width="2"/>
+      <text class="t" x="18" y="30" font-size="18" font-weight="900">Automation Layer</text>
+      <text class="t muted" x="18" y="58" font-size="13" font-weight="700">Reminders, assignee targeting, request logging, and rich content handling (embedded images)</text>
+
+      <g transform="translate(18,92)">
+        <rect class="chip" x="0" y="0" rx="12" ry="12" width="240" height="54"/>
+        <text class="t" x="18" y="24" font-size="13" font-weight="900">Teams / Slack</text>
+        <text class="t muted" x="18" y="42" font-size="12" font-weight="800">Webhook notifications</text>
+        <circle class="b" cx="214" cy="20" r="7"/>
+
+        <rect class="chip" x="260" y="0" rx="12" ry="12" width="240" height="54"/>
+        <text class="t" x="278" y="24" font-size="13" font-weight="900">Email (SMTP)</text>
+        <text class="t muted" x="278" y="42" font-size="12" font-weight="800">Reminders + updates</text>
+        <circle class="y" cx="474" cy="20" r="7"/>
+
+        <rect class="chip" x="520" y="0" rx="12" ry="12" width="260" height="54"/>
+        <text class="t" x="538" y="24" font-size="13" font-weight="900">API Sync + Logging</text>
+        <text class="t muted" x="538" y="42" font-size="12" font-weight="800">Request audits, pagination</text>
+        <circle class="p" cx="754" cy="20" r="7"/>
+
+        <rect class="chip" x="800" y="0" rx="12" ry="12" width="320" height="54"/>
+        <text class="t" x="818" y="24" font-size="13" font-weight="900">Rich Content Safety</text>
+        <text class="t muted" x="818" y="42" font-size="12" font-weight="800">Base64 image extraction + storage</text>
+        <circle class="k" cx="1096" cy="20" r="7"/>
+      </g>
+
+      <g transform="translate(18,164)">
+        <path class="line" d="M0 26 H1278"/>
+        <text class="t muted" x="0" y="58" font-size="12" font-weight="800">Board performance: optimized drag-and-drop + lazy-loaded ticket sections.</text>
+      </g>
+    </g>
+  </g>
+</svg>
+
